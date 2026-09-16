@@ -71,31 +71,29 @@
       width: 100%;
       max-width: 600px;
       border-radius: 8px;
-      background-color: #2a2a2f;
+      background-color: #0d0d11;
       padding: 10px;
-      filter: invert(0.85);
     }
 
     #audio::-webkit-media-controls-panel {
-      background-color: #2a2a2f;
+      background-color: #0d0d11;
       border-radius: 8px;
     }
 
-    #audio::-webkit-media-controls-play-button {
-      filter: invert(1) brightness(1.2);
+    #audio::-webkit-media-controls-mute-button {
+      filter: brightness(2) invert(1);
     }
 
-    #audio::-webkit-media-controls-mute-button {
-      accent-color: #eeeeee;
-      filter: brightness(1.2);
+    #audio::-webkit-media-controls-play-button {
+      filter: brightness(2) invert(1);
     }
 
     #audio::-webkit-media-controls-timeline {
-      accent-color: #eeeeee;
+      filter: brightness(1.5) invert(1);
     }
 
     #audio::-webkit-media-controls-volume-slider {
-      accent-color: #eeeeee;
+      filter: brightness(1.5) invert(1);
     }
 
     #audio::-webkit-media-controls-current-time-display,
