@@ -14,43 +14,82 @@
       justify-content: center;
       min-height: 100vh;
       margin: 0;
+      padding: 20px;
     }
-h1 {
-  font-family: ;
-  padding-bottom: 200px;
-}
+    
+    h1 {
+      font-family: Arial, sans-serif;
+      padding-bottom: 30px;
+      font-size: 2.5rem;
+      margin: 0;
+      text-align: center;
+    }
+
     canvas {
-      width: 93%;
+      width: 90%;
+      max-width: 1200px;
+      height: 400px;
       background: #000;
       border: 2px solid #222;
       border-radius: 8px;
       box-shadow: 0 0 20px #5dc1d099;
+      margin-bottom: 30px;
     }
+
     .controls {
-      margin-bottom: 20px;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
     }
-#audio {
-  border-radius: 100px;
-  width: 50%;
-}
-#fileInput {
-  display: block;
-  margin: auto;
-  margin-bottom: 20px;
-  border: 1px solid #5dc1d0;
-  padding: 13px;
-  width: 50%;
-}
+
+    #fileInput {
+      display: block;
+      padding: 15px 20px;
+      border: 2px solid #5dc1d0;
+      border-radius: 8px;
+      background-color: #1a1a1f;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 600px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    #fileInput:hover {
+      background-color: #252530;
+      border-color: #5dc1ff;
+      box-shadow: 0 0 10px #5dc1d099;
+    }
+
+    #audio {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      background-color: #1a1a1f;
+      padding: 10px;
+    }
+
+    #audio::-webkit-media-controls-panel {
+      background-color: #1a1a1f;
+    }
   </style>
 </head>
 <body>
+
+  <h1>Waveform de Linha</h1>
 
   <div class="controls">
     <input type="file" id="fileInput" accept="audio/*">
     <audio id="audio" controls></audio>
   </div>
 
-  <canvas id="canvas" width="800" height="300"></canvas>
+  <canvas id="canvas" width="1200" height="400"></canvas>
 
   <script>
     const fileInput = document.getElementById('fileInput');
@@ -128,7 +167,8 @@ h1 {
       ctx.stroke();
       ctx.stroke();
     }
- let db = null;
+
+    let db = null;
 
     // 1. Inicializa o Banco de Dados do Navegador (IndexedDB)
     const dbRequest = indexedDB.open('AudioStorageDB', 1);
